@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'View/Admin/admin_bottom_navigation.dart';
 import 'splash_screen.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: AdminBottomNavigation(),
     );
   }
 }
