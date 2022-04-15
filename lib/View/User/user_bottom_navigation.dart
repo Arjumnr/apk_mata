@@ -1,25 +1,23 @@
-import 'package:apk_mata/View/Admin/Navigation/admin_nav_home.dart';
-import 'package:apk_mata/View/Admin/Navigation/admin_nav_notification.dart';
 import 'package:apk_mata/View/nav_profile.dart';
-import 'package:apk_mata/globals.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 
-class AdminBottomNavigation extends StatefulWidget {
-  const AdminBottomNavigation({Key? key}) : super(key: key);
+import '../../globals.dart';
+import 'Navigation/user_nav_home.dart';
+
+class UserBottomNavigation extends StatefulWidget {
+  UserBottomNavigation({Key? key}) : super(key: key);
 
   @override
-  State<AdminBottomNavigation> createState() => _AdminBottomNavigationState();
+  State<UserBottomNavigation> createState() => _UserBottomNavigationState();
 }
 
-class _AdminBottomNavigationState extends State<AdminBottomNavigation> {
+class _UserBottomNavigationState extends State<UserBottomNavigation> {
   int _currentIndex = 0;
   List _widgetOptions = [
-    NavHomeAdmin(),
-    NavNotificationAdmin(),
+    NavHomeUser(),
     NavProfile(),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,11 +31,6 @@ class _AdminBottomNavigationState extends State<AdminBottomNavigation> {
           BottomNavyBarItem(
             icon: Icon(Icons.home),
             title: Text('Home'),
-            activeColor: background,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.notifications),
-            title: Text('Notification'),
             activeColor: background,
           ),
           BottomNavyBarItem(

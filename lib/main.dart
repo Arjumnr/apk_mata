@@ -1,3 +1,4 @@
+import 'package:apk_mata/View/Form/form_login.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'View/Admin/admin_bottom_navigation.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AdminBottomNavigation(),
+      home: FormLogin(),
     );
   }
 }
