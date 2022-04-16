@@ -9,58 +9,70 @@ class FormLogin extends StatelessWidget {
     //
     Size size = MediaQuery.of(context).size;
     //
-    final logo = Hero(
-      tag: 'hero',
-      child: CircleAvatar(
-        backgroundColor: Colors.transparent,
-        radius: 48.0,
-        child: Image.asset('assets/images/logo.png'),
+    final logo = Container(
+      width: 150,
+      height: 150,
+      child: Image.asset('assets/images/logo.png'),
+    );
+    //
+    final boxdecor = BoxDecoration(
+      color: Colors.red,
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(60),
       ),
     );
     //
-    final email = Container(
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.grey.shade200))),
-      child: Card(
-        child: TextField(
-          decoration: InputDecoration(
-              hintText: "Username",
-              hintStyle: TextStyle(color: Colors.grey),
-              border: InputBorder.none),
-        ),
-      ),
-    );
-    //
-    final password = TextFormField(
-      autofocus: false,
-      initialValue: '',
-      obscureText: true,
+    final formUsername = TextField(
       decoration: InputDecoration(
-        hintText: 'Password',
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
-      ),
+          hintText: "Email or Phone number",
+          hintStyle: TextStyle(color: Colors.grey),
+          border: InputBorder.none),
     );
-    //
-    final loginButton = Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
+
+    final nama = Card(
+      color: Colors.white70,
+      child: new Container(
+        padding: EdgeInsets.all(10.0),
+        child: new Column(
+          children: <Widget>[
+            new Row(
+              children: <Widget>[
+                new Expanded(
+                    child: new Text(
+                  "Bemerkung",
+                )),
+                new Expanded(
+                  child: new TextField(),
+                ),
+              ],
+            ),
+          ],
         ),
-        onPressed: () {},
-        padding: EdgeInsets.all(12),
-        color: Colors.lightBlueAccent,
-        child: Text('Log In', style: TextStyle(color: Colors.white)),
       ),
     );
     return Scaffold(
       backgroundColor: background,
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [],
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 50),
+                  child: logo,
+                ),
+              ],
+            ),
+            Container(
+              height: size.height * 0.8,
+              width: size.width,
+              decoration: boxdecor,
+              child: Column(
+                children: [nama],
+              ),
+            ),
+          ],
         ),
       ),
     );
